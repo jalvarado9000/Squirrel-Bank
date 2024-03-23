@@ -6,10 +6,13 @@ import Balance from './Balance'
 import Table from './Table'
 import Label from './Label'
 import MakeTransactionForm from './MakeTransactionForm'
+import transactions from './TRANSACTIONS'
 
 
 function App() {
 
+  const accountNumber = 'Test Account'
+  const addTransactionLabel = 'Add Transaction'
 
 
 
@@ -18,9 +21,9 @@ function App() {
       <div className="dashboard-page">
         <Header />
         <Balance />
-        <Label title={'Test Account'} />
-        <Table />
-        <Label title={'Add Transaction'} />
+        <Label title={accountNumber} />
+        <Table history={transactions}/>
+        <Label title={addTransactionLabel} />
         <MakeTransactionForm />
 
       </div>

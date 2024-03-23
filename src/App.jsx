@@ -20,7 +20,7 @@ function App() {
     <>
       <div className="dashboard-page">
         <Header />
-        <Balance />
+        <Balance balance={transactions}/>
         <Label title={accountNumber} />
         <Table history={transactions}/>
         <Label title={addTransactionLabel} />

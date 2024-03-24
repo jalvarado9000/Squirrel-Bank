@@ -18,18 +18,18 @@ function App() {
 
 
   let handleNewTransactions = (newTransactions) => {
-    (setAllTransactions([...allTransaction,newTransactions]))
+    (setAllTransactions([...allTransaction, newTransactions]))
   }
 
   return (
     <>
       <div className="dashboard-page">
         <Header />
-        <Balance balance={allTransaction}/>
+        <Balance balance={allTransaction} />
         <Label title={accountNumber} />
-        <Table history={allTransaction}/>
+        <Table history={allTransaction} />
         <Label title={addTransactionLabel} />
-        <MakeTransactionForm newTransaction={handleNewTransactions}/>
+        <MakeTransactionForm newTransaction={handleNewTransactions} />
 
       </div>
 

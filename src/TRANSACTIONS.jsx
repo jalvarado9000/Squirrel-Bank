@@ -23,13 +23,13 @@ const transactions = [
         amount: 50.00
     },
     {
-        id:4,
+        id: 4,
         date: '2022-01-25',
         object: 'Allowance',
         amount: 100.00
     },
     {
-        id:5,
+        id: 5,
         date: '2022-01-28',
         object: 'Gift card',
         amount: 100.00

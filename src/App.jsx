@@ -14,17 +14,22 @@ function App() {
   const accountNumber = 'Test Account'
   const addTransactionLabel = 'Add Transaction'
 
+  const [allTransaction, setAllTransactions] = useState(transactions);
 
+
+  let handleNewTransactions = (newTransactions) => {
+    (setAllTransactions([...allTransaction,newTransactions]))
+  }
 
   return (
     <>
       <div className="dashboard-page">
         <Header />
-        <Balance balance={transactions}/>
+        <Balance balance={allTransaction}/>
         <Label title={accountNumber} />
-        <Table history={transactions}/>
+        <Table history={allTransaction}/>
         <Label title={addTransactionLabel} />
-        <MakeTransactionForm />
+        <MakeTransactionForm newTransaction={handleNewTransactions}/>
 
       </div>
 

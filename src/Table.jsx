@@ -19,12 +19,12 @@ const Table = ({history}) => {
               </thead>
               <tbody id="transactions">
                   
-                      {history.map((element, index) => 
+                      {history.map((element) => 
                       (
                           <tr>
-                              <td key={index}>{element.date}</td>
-                              <td key={index}>{element.object}</td>
-                              <td key={index}>{element.amount}</td>
+                              <td key={element.id}>{element.date}</td>
+                              <td key={element.id}>{element.object}</td>
+                              <td key={element.id}>{element.amount}</td>
                           </tr>
 
                       )

@@ -7,6 +7,9 @@ import Table from './Table'
 import Label from './Label'
 import MakeTransactionForm from './MakeTransactionForm'
 import transactions from './TRANSACTIONS'
+import { HeaderOther } from './HeaderOther'
+import { Login } from './Login'
+import { Register } from './Register'
 
 
 function App() {
@@ -30,6 +33,14 @@ function App() {
         <Table history={allTransaction} />
         <Label title={addTransactionLabel} />
         <MakeTransactionForm newTransaction={handleNewTransactions} />
+
+        <Header />
+        <HeaderOther />
+        <Login />
+        <Header />
+        <HeaderOther />
+        <Register />
+
 
       </div>
 

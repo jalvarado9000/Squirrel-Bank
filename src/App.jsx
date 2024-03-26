@@ -1,15 +1,12 @@
 import { useState } from 'react'
 
 import './App.css'
-import Header from './Header'
-import Balance from './Balance'
-import Table from './Table'
-import Label from './Label'
-import MakeTransactionForm from './MakeTransactionForm'
+
 import transactions from './TRANSACTIONS'
-import { HeaderOther } from './HeaderOther'
-import { Login } from './Login'
-import { Register } from './Register'
+
+import { LoginPage } from './LoginPage'
+import { RegisterPage } from './RegisterPage'
+import { DashboardPage } from './DashboardPage'
 
 
 function App() {
@@ -27,19 +24,21 @@ function App() {
   return (
     <>
       <div className="dashboard-page">
-        <Header />
-        <Balance balance={allTransaction} />
-        <Label title={accountNumber} />
-        <Table history={allTransaction} />
-        <Label title={addTransactionLabel} />
-        <MakeTransactionForm newTransaction={handleNewTransactions} />
+ 
 
-        <Header />
-        <HeaderOther />
-        <Login />
-        <Header />
-        <HeaderOther />
-        <Register />
+        <LoginPage />
+
+        <DashboardPage 
+        balance={allTransaction} 
+        title={accountNumber} 
+        history={allTransaction} 
+        titles={addTransactionLabel} 
+        newTransaction={handleNewTransactions} 
+        />
+        
+        <RegisterPage />
+        
+       
 
 
       </div>

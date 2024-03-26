@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Label = ({ title }) => {
+const Label = ({ titles }) => {
     return (
         <>
             <div className="text-center">
-                <h2>{title}</h2>
+                <h2>{titles}</h2>
             </div>
         </>
     )

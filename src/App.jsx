@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import transactions from './TRANSACTIONS'
+
 import { LoginPage } from './LoginPage'
 import { RegisterPage } from './RegisterPage'
 import { DashboardPage } from './DashboardPage'
@@ -13,15 +13,16 @@ import {
 
 import RootLayout from './RootLayout'
 
+const accountNumber = 'Test Account'
+const addTransactionLabel = 'Add Transaction'
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<RegisterPage />} />
-      <Route path="Dashboard" element={<DashboardPage balance={allTransaction}
+      <Route path="Dashboard" element={<DashboardPage 
         title={accountNumber}
-        history={allTransaction}
-        titles={addTransactionLabel}
-        newTransaction={handleNewTransactions} />} />
+        titles={addTransactionLabel} />} />
       <Route path="Login" element={<LoginPage />} />
     </Route>
   )
@@ -29,15 +30,9 @@ const router = createBrowserRouter(
 
 function App() {
 
-  const accountNumber = 'Test Account'
-  const addTransactionLabel = 'Add Transaction'
-
-  const [allTransaction, setAllTransactions] = useState(transactions);
 
 
-  let handleNewTransactions = (newTransactions) => {
-    (setAllTransactions([...allTransaction, newTransactions]))
-  }
+
 
   return (
     <>

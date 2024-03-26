@@ -5,14 +5,22 @@ import Balance from './Balance'
 import Table from './Table'
 import Label from './Label'
 import MakeTransactionForm from './MakeTransactionForm'
+import transactions from './TRANSACTIONS'
 
-export const DashboardPage = ({balance, title, history, newTransaction, titles}) => {
+export const DashboardPage = ({title, titles}) => {
+
+  const [allTransaction, setAllTransactions] = useState(transactions);
+
+
+  let handleNewTransactions = (newTransactions) => {
+    (setAllTransactions([...allTransaction, newTransactions]))
+  }
   return (
       <>       <Header />
-          <Balance balance={balance} />
+      <Balance balance={allTransaction} />
           <Label title={title} />
-          <Table history={history} />
+      <Table history={allTransaction} />
           <Label titles={titles} />
-          <MakeTransactionForm newTransaction={newTransaction} /></>
+      <MakeTransactionForm newTransaction={handleNewTransactions} /></>
   )
 }

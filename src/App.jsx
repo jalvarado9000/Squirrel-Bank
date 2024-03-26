@@ -4,8 +4,28 @@ import transactions from './TRANSACTIONS'
 import { LoginPage } from './LoginPage'
 import { RegisterPage } from './RegisterPage'
 import { DashboardPage } from './DashboardPage'
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom"
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider
+} from 'react-router-dom'
 
+import RootLayout from './RootLayout'
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<RegisterPage />} />
+      <Route path="Dashboard" element={<DashboardPage balance={allTransaction}
+        title={accountNumber}
+        history={allTransaction}
+        titles={addTransactionLabel}
+        newTransaction={handleNewTransactions} />} />
+      <Route path="Login" element={<LoginPage />} />
+    </Route>
+  )
+)
 
 function App() {
 
@@ -22,35 +42,7 @@ function App() {
   return (
     <>
 
-      <BrowserRouter>
-      <div className="dashboard-page">
- 
-
-          <nav>
-            
-            <NavLink to="/">Register</NavLink>
-            <br />
-            <NavLink to="Dashboard">Dashboard</NavLink>
-            <br />
-            <NavLink to="Login">Login</NavLink>
-          </nav>
-
-          <Routes>
-            <Route index element={<RegisterPage />} />
-            <Route path="Dashboard" element={<DashboardPage balance={allTransaction}
-              title={accountNumber}
-              history={allTransaction}
-              titles={addTransactionLabel}
-              newTransaction={handleNewTransactions} />} />
-            <Route path="Login" element={<LoginPage />} />
-          </Routes>
-        
-        
-       
-
-
-      </div>
-      </BrowserRouter>
+      <RouterProvider router={router} />
 
     </>
   )

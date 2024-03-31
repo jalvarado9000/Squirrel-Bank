@@ -1,3 +1,4 @@
+/* array with default values to display */
 const transactions = [
     {
         id: 1,

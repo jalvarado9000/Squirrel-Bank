@@ -6,7 +6,9 @@ export const Register = () => {
             <h1>Create Account</h1>
 
 
+            {/* form to register */}
             <form>
+                {/* insert username */}
                 <input
                     type="text"
                     id="username"
@@ -15,6 +17,7 @@ export const Register = () => {
                     required
                 />
                 <br />
+                {/* insert email */}
                 <input
                     type="email"
                     id="email"
@@ -23,6 +26,7 @@ export const Register = () => {
                     required
                 />
                 <br />
+                {/* insert password */}
                 <input
                     type="password"
                     id="password"
@@ -31,6 +35,7 @@ export const Register = () => {
                     required
                 />
                 <br />
+                {/* insert re-confirmed password */}
                 <input
                     type="password"
                     id="password-confirm"
@@ -39,6 +44,7 @@ export const Register = () => {
                     required
                 />
                 <br />
+                {/* submit button */}
                 <button type="submit">Sign in</button>
             </form>
         </>

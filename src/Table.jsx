@@ -3,13 +3,12 @@ import React from 'react'
 const Table = ({ history }) => {
 
 
-
-
     return (
         <>
             <div className="dashboard-content">
 
                 <table className="transactions-table">
+                    {/* displays the subject expected on the table */}
                     <thead>
                         <tr>
                             <th>Date</th>
@@ -17,6 +16,7 @@ const Table = ({ history }) => {
                             <th>Amount</th>
                         </tr>
                     </thead>
+                    {/* displays the array in the history prop */}
                     <tbody id="transactions">
 
                         {history.map((element) =>
@@ -26,14 +26,7 @@ const Table = ({ history }) => {
                                 <td key={element.id}>{element.object}</td>
                                 <td key={element.id}>{element.amount}</td>
                             </tr>
-
-                        )
-
-                        )}
-
-
-
-
+                        ))}
 
                     </tbody>
                 </table>
